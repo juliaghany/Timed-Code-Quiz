@@ -6,12 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Timed Coding Quiz</title>
 </head>
 
 <body>
-<script src="assets/js/script.js"></script>
+    <header>
+        <div>
+            <!-- will I need to add a link to a new page here to show the high scores? -->
+            <a href="highscores.html" id="high-scores">View High Scores</a>
+        </div>
+        <div id="timer">Time: 0</div>
+    </header>
+    <section id="intro-page">
+        <div>
+            <h1>Coding Quiz Challenge</h1>
+            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
+                answers will penalize your score/time by ten seconds!</p>
+            <button class="btn start-btn" id="start-quiz-btn">Start Quiz</button>
+        </div>
+    </section>
+    <section id="questions-page" style="display: none">
+        <div id="questions-container">
+            <h2 id="questions">Place questions here</h2>
+            <ul>
+                <li><button id="option-1" class="btn answer-btn">1</button></li>
+                <li><button id="option-2" class="btn answer-btn">2</button></li>
+                <li><button id="option-3" class="btn answer-btn">3</button></li>
+                <li><button id="option-4" class="btn answer-btn">4</button></li>
+            </ul>
+        </div>
+    </section>
+    <!-- <section id="right-or-wrong-container" style="display: none">
+        <div >
+            <hr/>
+            <p id="right-or-wrong"></p>
+        </div>
+   </section> -->
+
+    <section id="end-quiz-page" style="display: none">
+        <div>
+            <h2>All done!</h2>
+            <P id="final-score">Your final score is</P>
+            <form id="score-form">
+                <label for="initials">Enter your initials below:</label><br>
+                <input type="text" id="initials" name="initials" value=""><br><br>
+                <input type="submit" value="Submit" class="btn" />
+            </form>
+            <!-- does the submit button take you to the view high scores page? -->
+        </div>
+    </section>
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
