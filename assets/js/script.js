@@ -79,7 +79,7 @@ function showQuestion() {
 questionsContainer.addEventListener("click", function (event) {
     var target = event.target
     if (target.matches(".answer-btn")) {
-        //if it's wrong, else if it's right
+        //if it's right, else if it's wrong
         if (target.textContent === quizQuestions[currentQuestion].correct ) {
             alert("Correct!")
         } else {
@@ -122,7 +122,6 @@ function saveToStorage(value) {
         return
     }
     savedScores.push(value)
-    console.log(savedScores)
     localStorage.setItem("scores", JSON.stringify(savedScores))
 
 }
