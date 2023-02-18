@@ -42,11 +42,16 @@ var optionThree = document.querySelector("#option-3");
 var optionFour = document.querySelector("#option-4");
 var currentQuestion;
 var finalScore = document.querySelector("#final-score");
+var rightWrongContainer = document.querySelector("#right-wrong-container");
+var rightWrong = document.querySelector("#right-wrong");
+
+// Variables for timer 
 
 var timer = document.querySelector("#timer");
 var secondsLeft = 76;
 
 // Starts the timer when the "start quiz" button is clicked, hides intro page, shows first quesiton
+
 startQuizBtn.addEventListener("click", function () {
     var timerInterval = setInterval(function () {
         secondsLeft--;
@@ -56,11 +61,10 @@ startQuizBtn.addEventListener("click", function () {
             clearInterval(timerInterval);
             return endQuiz()
         }
-
     }, 1000);
 
     intro.style.display = "none";
-    questionsPage.style.display = "block" 
+    questionsPage.style.display = "block"
     currentQuestion = 0
     showQuestion()
 });
@@ -76,25 +80,39 @@ function showQuestion() {
 }
 
 questionsContainer.addEventListener("click", function (event) {
+
+
     var target = event.target
     if (target.matches(".answer-btn")) {
         //if it's right, else if it's wrong
-        if (target.textContent === quizQuestions[currentQuestion].correct ) {
-            alert("Correct!")
+        if (target.textContent === quizQuestions[currentQuestion].correct) {
+            correct()
+
         } else {
-            secondsLeft -=10
-            alert("Wrong!")
+            secondsLeft -= 10
+            wrong()
         }
 
         if (currentQuestion >= quizQuestions.length - 1) {
-            currentQuestion++ 
+            currentQuestion++
             return endQuiz()
         }
         currentQuestion++ //means same thing as current question = current question + 1
         showQuestion();
     }
-    
+
 });
+
+function correct() {
+    rightWrongContainer.style.display = "block"
+    rightWrong.textContent = "Correct!"
+}
+
+function wrong() {
+    rightWrongContainer.style.display = "block"
+    rightWrong.textContent = "Wrong!"
+}
+
 
 function endQuiz() {
     questionsPage.style.display = "none"
@@ -115,14 +133,15 @@ function handleFormSubmit(event) {
 }
 
 function saveToStorage(value) {
-    var savedScores = JSON.parse(localStorage.getItem("scores"))
-    if (!savedScores || !savedScores.length) {
-        localStorage.setItem("scores", JSON.stringify([value]))
-        return
-    }
+    var savedScores = JSON.parse(localStorage.getItem("scores")) || []
     savedScores.push(value)
     localStorage.setItem("scores", JSON.stringify(savedScores))
     window.location.href = "highscores.html";
 }
 
 
+// rightWrongContainer.style.display = "block";
+// rightWrong.textContent = "Correct!"
+
+// var rightWrongContainer = document.querySelector("#right-wrong-container")
+// var rightWrong = document.querySelector("#right-wrong")
