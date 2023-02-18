@@ -11,7 +11,7 @@ function loadStorage() {
     for (let i = 0; i < savedScores.length; i++) {
         var savedScore = savedScores[i]
         var li = document.createElement("li");
-        li.textContent = JSON.stringify(savedScore)
+        li.textContent = savedScore.initials + " " + "- " + savedScore.score
         showScores.appendChild(li);
     }
 

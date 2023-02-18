@@ -7,7 +7,7 @@ var quizQuestions = [
     {
         question: "The condition in an if / else statement is enclosed with:",
         answers: ["1. quotes", "2. curly brackets", "3. parenthesis", "4. square brackets"],
-        correct: "3. paranthesis"
+        correct: "3. parenthesis"
     },
     {
         question: "Arrays in JavaScript can be used to store:",
@@ -36,7 +36,6 @@ var questions = document.querySelector("#questions");
 var questionsContainer = document.querySelector("#questions-container")
 var endQuizPage = document.querySelector("#end-quiz-page");
 var initials = document.querySelector("#initials");
-var sumbitBtn = document.querySelector("#submit-btn");
 var optionOne = document.querySelector("#option-1");
 var optionTwo = document.querySelector("#option-2");
 var optionThree = document.querySelector("#option-3");
@@ -123,25 +122,7 @@ function saveToStorage(value) {
     }
     savedScores.push(value)
     localStorage.setItem("scores", JSON.stringify(savedScores))
-
+    window.location.href = "highscores.html";
 }
 
-//Commonly used data types DO NOT incude: strings, booleans, * alerts, numbers
-//The condition in an if / else statement is enclosed with: quotes, curly brackets, *parenthesis, square brackets
-//Arrays in JavaScript can be used to store: numbers and strings, other arrays, booleans, * all of the above
-//String values must be enclosed within ____ when being assigned to variables: commas, curly brackets, * quotes, parenthesis
-//A very useful tool used during development and debugging for printing content to the debugger is: JavaScript, terminal / bash, for loops, * console.log
-
-
-// User clicks on start button
-// Timer begins once quiz has started
-// User is taken to question 1
-// User answers question 1, and text appears saying whether or not the answer was correct
-// If user's answer is incorrect, score and time is penalized by 10 seconds
-// User goes through all questions until finished with the quiz
-// User is then shown their score and able to enter their initials to be stored in the High Scores, hits submit button
-// User is then able to view high scores
-// User can either go back or hit clear results
-
-// https://www.sitepoint.com/simple-javascript-quiz/
 
