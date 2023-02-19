@@ -42,7 +42,7 @@ h1 {
     border-radius: 4rem;
     color: white;
     font-size: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .btn:hover {
@@ -70,14 +70,23 @@ input {
 }
 
 #questions-container {
-    padding-top: 60px;
+    margin: 25px;
+    padding: 25px;
 }
 
 ul {
     padding-top: 60px;
 }
 
+hr {
+    width: 80%;
+    margin: 0 auto; 
+}
+
 #show-scores>li {
     padding-bottom: 35px;
 }
+
+
+
 @media screen and (max-width) {}
