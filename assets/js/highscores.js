@@ -1,6 +1,11 @@
+// define variables and target parts of HTML using querySelector
+
 var showScores = document.querySelector("#show-scores");
 var clearBtn = document.querySelector("#clear-scores")
 var scoreContainer = document.querySelector("#high-score-container")
+var clearOrReturn = document.querySelector("#clear-or-return")
+
+// shows user's initials and scores on high scores page
 
 function loadStorage() {
     showScores.innerHTML = ""
@@ -15,7 +20,9 @@ function loadStorage() {
         showScores.appendChild(li);
     }
 
-    scoreContainer.addEventListener("click", function (event) {
+// added event listener to clear scores that were previously saved to high scores when user clicks on "clear high scores" button
+
+    clearOrReturn.addEventListener("click", function (event) {
         var target = event.target 
         if (target.matches(".clear-btn")) {
             localStorage.clear()
@@ -25,6 +32,8 @@ function loadStorage() {
     )
 }
 
+// calls loadStorage() function
+
 loadStorage()
 
 
@@ -32,7 +41,3 @@ loadStorage()
 
 
 // Module 4 Activity 26 reference
-
-
-
-//li.textContent = localStorage.setItem("scores", JSON.stringify(savedScore)) doesnt work

@@ -1,16 +1,23 @@
+/* used universal selector to set the font to Verdana for everything*/
+
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    box-sizing: border-box;
 }
+
+/* sets font size and padding to View High Scores and Timer in the header */
 
 header {
     font-size: 20px;
-    margin: 10px;
+    padding: 10px;
 }
+
+/* aligns the text in the body of the HTML to be center */
 
 body {
     text-align: center;
 }
+
+/* moves View High Score to the far left of the page, changed the color to match the buttons once they're hovered over, removed underline */
 
 #high-scores {
     float: left;
@@ -18,23 +25,27 @@ body {
     text-decoration: none;
 }
 
+/* moves timer to the far right of the page */
+
 #timer {
     float: right;
 }
+
+/* sets font size for the h1 elements, added padding to create space between the top of page and text */
 
 h1 {
     font-size: 45px;
     padding-top: 50px;
 }
 
-#intro-page {
-    padding: 60px;
-}
+/* added padding to create space between h1 and p text content, changed font-size of p text content */
 
 #intro-page p {
     padding: 60px;
     font-size: 25px;
 }
+
+/* added padding to the button to make it appear larger, added color to the button, gave it a border radius of 4rem to resemble to mock-up, changed the text to white, set the font-size, used margin-bottom to space out the answer buttons */
 
 .btn {
     padding: 10px;
@@ -45,48 +56,51 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* used the hover CSS pseudo class to make the button change to purple when user hovers over it, also changed the cursor to a pointer when the user hover overs it */
+
 .btn:hover {
     background-color: rgb(153, 75, 204) !important;
     cursor: pointer;
 }
 
+/* set the font-size to 30px, added padding to the top of h2 to position on the page where I wanted it  */
 
 h2 {
     font-size: 30px;
-    text-align: center;
     padding-top: 50px;
 }
 
-p {
+/* added padding to p in end-quiz-page to create the spacing I wanted */
+
+#end-quiz-page p {
     padding: 25px;
 }
+
+/* used margin-top to create the spacing I wanted between the input text box and label */
 
 input {
     margin-top: 25px;
 }
 
-.hidden {
-    display: none;
-}
-
-#questions-container {
-    margin: 25px;
-    padding: 25px;
-}
+/* used padding-top to create space between displayed questions and answers */
 
 ul {
     padding-top: 60px;
 }
+
+/* set the width of the line break to 80% so that it didn't go entirely across the page, set the margin to center it on the page  */
 
 hr {
     width: 80%;
     margin: 0 auto; 
 }
 
+/* set the padding bottom to create space between the listed high scores and the clear/back buttons */
+
 #show-scores>li {
     padding-bottom: 35px;
 }
 
-
+/* creates a responsive layout */
 
 @media screen and (max-width) {}

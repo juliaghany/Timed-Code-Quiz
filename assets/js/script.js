@@ -1,4 +1,4 @@
-// Store quiz questions in an array with objects, stored possible answers to the questions in an array 
+// stored quiz questions in an array with objects, stored possible answers to the questions in an array, correct answer is listed in the objects as well
 
 var quizQuestions = [
     {
@@ -29,7 +29,7 @@ var quizQuestions = [
 
 ]
 
-// Define variables and used querySelector to target certain parts of my HTML
+// defined variables and used querySelector to target certain parts of my HTML
 
 var intro = document.querySelector("#intro-page");
 var highScores = document.querySelector("#high-score");
@@ -48,7 +48,7 @@ var finalScore = document.querySelector("#final-score");
 var rightWrongContainer = document.querySelector("#right-wrong-container");
 var rightWrong = document.querySelector("#right-wrong");
 
-// Variables for timer 
+// variables for timer 
 
 var timer = document.querySelector("#timer");
 var secondsLeft = 76;
@@ -85,8 +85,8 @@ function showQuestion() {
 
 // this event listener moves user to the next question after clicking on an answer button - makes sure they are clicking on an answer button and not just anywhere in the div 
 // if they select the correct answer, calls correct() function to indicate to the user that they selected the correct answer
-// if they select an incorrect answer, calls wrong() function to indicate to the user that they selected the wrong answer; also subtracts 10 from score/time
-// if they answer the last question, calls endQuiz() to take them to the end quiz page
+// if they select an incorrect answer, calls wrong() function to indicate to the user that they selected the wrong answer; also subtracts 10 from time/score
+// if they answer the last question, calls endQuiz(), takes them to the end quiz page
 
 questionsContainer.addEventListener("click", function (event) {
     var target = event.target
@@ -110,21 +110,21 @@ questionsContainer.addEventListener("click", function (event) {
 
 });
 
-// change display of div from "none" to "block", tells the user if they got the answer correct
+// change display of #right-wrong-container from "none" to "block", tells the user if they got the answer correct
 
 function correct() {
     rightWrongContainer.style.display = "block"
     rightWrong.textContent = "Correct!"
 }
 
-// change display of div from "none" to "block", tells the user if they got the answer wrong 
+// change display of #right-wrong-container from "none" to "block", tells the user if they got the answer wrong 
 
 function wrong() {
     rightWrongContainer.style.display = "block"
     rightWrong.textContent = "Wrong!"
 }
 
-// display end quiz page, event listener to submit user information once submit button is clicked, shows user their score
+// hides the questions page, displays end quiz page, event listener to store user information once submit button is clicked, shows user their score
 
 function endQuiz() {
     questionsPage.style.display = "none"
@@ -133,7 +133,7 @@ function endQuiz() {
     finalScore.textContent = "Your final score is: " + secondsLeft
 }
 
-// 
+// function that handles the user's submission using saveToStorage function, stores their initials and score to storage
 
 function handleFormSubmit(event) {
     event.preventDefault()
@@ -145,6 +145,8 @@ function handleFormSubmit(event) {
         })
     }
 }
+
+// function that saves user's score, once user submits their initials they are taken to high scores page 
 
 function saveToStorage(value) {
     var savedScores = JSON.parse(localStorage.getItem("scores")) || []
