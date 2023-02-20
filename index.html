@@ -28,6 +28,7 @@
         </div>
     </section>
     <!-- quiz questions page -->
+    <!-- used style="display: none" on this section and the sections below to hide the content until I made it visible with JavaScript -->
     <section id="questions-page" style="display: none">
         <div id="questions-container">
             <h2 id="questions">Place questions here</h2>
@@ -37,24 +38,26 @@
                 <li><button id="option-3" class="btn answer-btn">3</button></li>
                 <li><button id="option-4" class="btn answer-btn">4</button></li>
             </ul>
-            <div id="right-wrong-container" style="display: none">
-                <hr />
-                <p id="right-wrong"></p>
-            </div>
-        </div>
     </section>
     <!-- end of quiz page -->
     <section id="end-quiz-page" style="display: none">
-        <div>
+        <div id="end-quiz-container">
             <h2>All done!</h2>
             <p id="final-score"></p>
             <form id="score-form">
                 <label for="initials">Enter your initials below:</label><br>
                 <input type="text" id="initials" name="initials" value=""><br><br>
                 <a href="highscores.html">
-                    <input type="submit" value="Submit" class="btn" />
+                    <input type="submit" value="Submit" class="btn submit-btn" />
                 </a>
             </form>
+        </div>
+    </section>
+    <!-- section that shows the user whether they got the answer correct or wrong -->
+    <section>
+        <div id="right-wrong-container" style="display: none">
+            <hr />
+            <p id="right-wrong"></p>
         </div>
     </section>
 

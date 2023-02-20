@@ -92,7 +92,11 @@ ul {
 
 hr {
     width: 80%;
-    margin: 0 auto; 
+    margin: 0 auto;
+}
+
+#right-wrong p {
+    margin-top: 30px;
 }
 
 /* set the padding bottom to create space between the listed high scores and the clear/back buttons */
