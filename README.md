@@ -2,7 +2,7 @@
 
 ![Alt text](assets/images/intro-page.png) 
 ![Alt text](assets/images/questions-page.png)
-![Alt text](assets/images/questions-page.png)
+![Alt text](assets/images/end-quiz-page.png)
 ![Alt text](assets/images/high-scores-page.png)
 
 ## Description
