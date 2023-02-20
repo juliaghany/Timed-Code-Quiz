@@ -38,6 +38,7 @@ var questionsPage = document.querySelector("#questions-page");
 var questions = document.querySelector("#questions");
 var questionsContainer = document.querySelector("#questions-container")
 var endQuizPage = document.querySelector("#end-quiz-page");
+var endQuizContainer = document.querySelector("#end-quiz-container");
 var initials = document.querySelector("#initials");
 var optionOne = document.querySelector("#option-1");
 var optionTwo = document.querySelector("#option-2");
@@ -104,7 +105,7 @@ questionsContainer.addEventListener("click", function (event) {
             currentQuestion++
             return endQuiz()
         }
-        currentQuestion++ 
+        currentQuestion++
         showQuestion();
     }
 
@@ -129,6 +130,14 @@ function wrong() {
 questionsContainer.onmouseover = function (event) {
     var target = event.target
     if (target.matches(".answer-btn"))
+        rightWrongContainer.style.display = "none"
+}
+
+// hides rightWrongContainer once user hovers over the submit button on end quiz page
+
+endQuizContainer.onmouseover = function (event) {
+    var target = event.target
+    if (target.matches(".submit-btn"))
         rightWrongContainer.style.display = "none"
 }
 
