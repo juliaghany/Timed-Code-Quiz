@@ -34,10 +34,4 @@ function loadStorage() {
 
 // calls loadStorage() function
 
-loadStorage()
-
-
-
-
-
-// Module 4 Activity 26 reference
+loadStorage();

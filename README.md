@@ -1,5 +1,10 @@
 # Timed Code Quiz
 
+[!Alt text](assets/images/intro-page.png)
+[!Alt text](assets/images/questions-page.png)
+[!Alt text](assets/images/end-quiz-page.png)
+[!Alt text](assets/images/high-scores-page.png)
+
 ## Description
 
 - My motivation for this project was to create an HTML, CSS, and JavaScript files from scratch in order to create a timed multiple choice question quiz. 
