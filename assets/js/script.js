@@ -124,6 +124,14 @@ function wrong() {
     rightWrong.textContent = "Wrong!"
 }
 
+// hides rightWrongContainer once user hovers over the answer button on the next question
+
+questionsContainer.onmouseover = function (event) {
+    var target = event.target
+    if (target.matches(".answer-btn"))
+        rightWrongContainer.style.display = "none"
+}
+
 // hides the questions page, displays end quiz page, event listener to store user information once submit button is clicked, shows user their score
 
 function endQuiz() {
